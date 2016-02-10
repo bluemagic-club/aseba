@@ -330,34 +330,39 @@ namespace Aseba { namespace ThymioVPL
 			}
 			
 			// test code
-			text += L"\twhen ";
 			if (block->getName() == "button")
 			{
+				text += L"\twhen ";
 				text += visitEventArrowButtons(block);
+				text += L" do\n";
 			}
 			else if (block->getName() == "prox")
 			{
+				text += L"\tif ";
 				text += visitEventProx(block);
+				text += L" then\n";
 			}
 			else if (block->getName() == "proxground")
 			{
+				text += L"\tif ";
 				text += visitEventProxGround(block);
+				text += L" then\n";
 			}
 			else if (block->getName() == "acc")
 			{
+				text += L"\tif ";
 				text += visitEventAcc(block);
+				text += L" then\n";
 			}
 			else
 			{
 				// internal compiler error
 				abort();
 			}
-			
-			text += L" do\n";
-			
+
 			inWhenBlock = true;
 		}
-		
+
 		// if state filter does generate a test
 		if (stateFilterBlock && stateFilterBlock->isAnyValueSet())
 		{

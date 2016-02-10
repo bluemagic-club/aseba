@@ -27,7 +27,7 @@
 /*@{*/
 
 /*! version of Aseba as string */
-#define ASEBA_VERSION "1.4.00"
+#define ASEBA_VERSION "1.4.00-bmc"
 
 /*! version of Aseba as an int */
 #define ASEBA_VERSION_INT 10400
